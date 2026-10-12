@@ -1,34 +1,29 @@
 # kin-db
 
-The graph storage engine behind Kin, a graph-native code repository for people
-and AI agents. It handles the entities, relationships, snapshots, and change
-history that a Kin repository is made of.
+The graph storage engine behind Kin, a graph-native code repository for AI agents
+and the people who build with them. It handles the entities, relationships,
+snapshots, and change history that a Kin repository is made of.
 
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
-[![Part of Kin](https://img.shields.io/badge/part%20of-Kin-6E56CF.svg)](https://github.com/firelock-ai/kin)
+[![Part of Kin](https://img.shields.io/badge/part%20of-Kin-6E56CF.svg)](https://github.com/kinlab-ai/kin)
 
 In Kin the graph is the repository. It is not an index over files, and not a
 metadata layer sitting beside them. It is where every entity, relation, and
 provenance record actually lives, and `kin-db` is what stores it. It owns graph
 storage, snapshot persistence, BM25 lexical retrieval, and ANN vector search,
-and it composes `kin-infer` for on-device embedding inference. `kin`, the
-system of record, and `kin-vfs`, the transparent filesystem projection, both
-build on top of it.
+and it composes `kin-infer` for on-device embedding inference. `kin`, with its
+CLI, daemon and MCP server, builds on top of it.
 
 Apache-2.0, the same as `kin`.
 
 ## What Kin is
 
-**AI writes code. Kin proves what changed.**
+Kin is a graph-native code repository for AI agents and the people who build with
+them. It stores source, recorded code relationships, and versioned history as
+repository state. The graph is the repository model, not a search index maintained
+beside another repository.
 
-Kin is the system of record for AI-written software. Your code is a graph of
-entities, relations, and change history rather than a pile of files and diffs,
-so agents and humans can ask what a change touches instead of rebuilding that
-picture on every run. Provenance and review are part of the record. Kin
-coexists with Git, and filesystem projections let supported tools keep working
-with ordinary files.
-
-Start at **[firelock-ai/kin](https://github.com/firelock-ai/kin)** and
+Start at **[kinlab-ai/kin](https://github.com/kinlab-ai/kin)** and
 **[kinlab.ai](https://kinlab.ai)**.
 
 ## What kin-db does
@@ -39,8 +34,8 @@ Kin's semantic repository model, where every function, type, file, and relation
 is a first-class node with a stable identity, a content hash, and verifiable
 Merkle ancestry.
 
-It is the lowest authoritative layer in the open Kin local stack. `kin` (the
-system of record) and `kin-vfs` (the filesystem projection) build on top of it.
+It is the lowest authoritative layer in the open Kin local stack. `kin`, with its
+CLI, daemon and MCP server, builds on top of it.
 It composes `kin-search` for BM25 lexical retrieval, `kin-vector` for ANN and
 embedding retrieval, and `kin-infer` for on-device embedding inference.
 
@@ -114,11 +109,11 @@ never becomes retrieval authority.
 
 | Repo | Role |
 |------|------|
-| [kin](https://github.com/firelock-ai/kin) | Semantic system of record: CLI, daemon, MCP server, projections |
-| [kin-vfs](https://github.com/firelock-ai/kin-vfs) | Transparent filesystem projection |
-| [kin-editor](https://github.com/firelock-ai/kin-editor) | VS Code extension |
-| [kin-lsp](https://github.com/firelock-ai/kin-lsp) | Language-server enrichment boundary |
-| [kinlab](https://kinlab.ai) | Hosted collaboration and control plane |
+| [kin](https://github.com/kinlab-ai/kin) | The repository itself: CLI, daemon, MCP server, projections |
+| [kin-vfs](https://github.com/kinlab-ai/kin-vfs) | Deprecated filesystem projection, archived for reference |
+| [kin-editor](https://github.com/kinlab-ai/kin-editor) | VS Code extension |
+| [kin-lsp](https://github.com/kinlab-ai/kin-lsp) | Language-server enrichment boundary |
+| [KinLab](https://kinlab.ai) | Hosted product for teams, in development |
 
 ## License
 
