@@ -5,7 +5,9 @@ on:
     types: [kin-registry-release]
   workflow_dispatch:
   schedule:
-    - cron: "23 */6 * * *"
+    # Daily rather than every 6 hours: a quarter of the 6-hourly runs failed,
+    # and a dependency pin does not need to move four times a day.
+    - cron: "23 5 * * *"
 
 jobs:
   dependency-wave:
