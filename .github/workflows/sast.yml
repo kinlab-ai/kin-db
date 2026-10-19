@@ -10,6 +10,10 @@ on:
     branches: [main]
   merge_group:
 
+# Least privilege: every job here only reads the repository.
+permissions:
+  contents: read
+
 # The sha suffix is empty off main, so every pull request and merge-queue ref
 # keeps one group per ref and `cancel-in-progress` supersedes an older push
 # exactly as it did before. On main each commit gets its own group, because
