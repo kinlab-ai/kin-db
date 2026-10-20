@@ -7,9 +7,13 @@ on:
     branches: [main]
   merge_group:
 
+# Least privilege: the shared release workflow runs every job with contents: read only. Tags and registry publishing use App and registry secrets, not this token, and a called workflow cannot exceed what its caller grants.
+permissions:
+  contents: read
+
 jobs:
   release:
-    uses: firelock-ai/kin-actions/.github/workflows/cargo-registry-release.yml@v0.1.35
+    uses: kinlab-ai/kin-actions/.github/workflows/cargo-registry-release.yml@v0.1.38
     with:
       package: kin-db
       manifest: Cargo.toml
