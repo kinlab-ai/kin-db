@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   release:
-    uses: kinlab-ai/kin-actions/.github/workflows/cargo-registry-release.yml@v0.1.35
+    uses: kinlab-ai/kin-actions/.github/workflows/cargo-registry-release.yml@v0.1.38
     with:
       package: kin-db
       manifest: Cargo.toml
